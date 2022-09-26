@@ -1,12 +1,18 @@
 import React from "react";
 
-function Transaction() {
+function Transaction({date,description,category,amount,id,onDeleteKey}) {
+  function deleteTransaction(event){
+    
+    onDeleteKey(event.target.id)
+  
+  }
   return (
     <tr>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
+      <td>{date}</td>
+      <td>{description}</td>
+      <td>{category}</td>
+      <td>{amount}</td>
+      <td><button id={id} onClick={deleteTransaction}>Delete</button></td>
     </tr>
   );
 }
